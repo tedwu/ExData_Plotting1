@@ -10,7 +10,7 @@ m1 <- read.table(fileName, sep = ';', header = TRUE, stringsAsFactors = FALSE)
 m1.sub <- subset(m1, strptime(m1$Date, dateFormat) > startDate & strptime(m1$Date, dateFormat) < endDate)
 m1.sub$Date_Time <- strptime(mapply(paste, m1.sub$Date, m1.sub$Time), mapply(paste, dateFormat, timeFormat))
 
-png('polt2.png', bg = 'transparent')
+png('plot2.png', bg = 'transparent')
 plot(x = m1.sub$Date_Time,
      y = as.numeric(m1.sub$Global_active_power),
      xlab = NA,
